@@ -12,7 +12,7 @@ connectDB()
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use('/',produuctRoutes)
-app.use('/',userRoutes)
+app.use('/api/auth',userRoutes)
 
 
 

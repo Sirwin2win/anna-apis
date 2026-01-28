@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
         required:['User email is required']
     },
     password:{
-        type:Number,
+        type:String,
         required:['User password is required']
     },
 },{timestamps:true})
