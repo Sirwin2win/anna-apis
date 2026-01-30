@@ -41,6 +41,19 @@ exports.getProducts = async(req,res)=>{
         res.send(error.message)
     }
 }
+// Fetch Single Product
+exports.fetchSingle = async(req,res)=>{
+    const {id} = req.params
+    try {
+        const product = await Product.findById(id)
+        if(!product){
+            res.send("No product found")
+        }
+        res.send(product)
+    } catch (error) {
+        res.send(error.message)
+    }
+}
 // Update product
 exports.upadateProduct = async(req,res)=>{
     // destructure the id from the url
