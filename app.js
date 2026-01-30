@@ -3,12 +3,14 @@ const dotenv = require('dotenv').config()
 const connectDB = require('./config/db')
 const produuctRoutes = require('./routes/productRoutes')
 const userRoutes = require('./routes/userRoutes')
+var cors = require('cors')
 
 
 const app = express()
 
 connectDB()
 // middlewares
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use('/',produuctRoutes)
